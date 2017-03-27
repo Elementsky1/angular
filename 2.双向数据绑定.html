@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript">
+           angular.module("myApp",[]).controller("myTest",function($scope){
+            $scope.change=function(){
+                $scope.userName="数据变视图就变";
+            };
+           });
+        </script>
+    </head>
+    <body ng-app="myApp">
+      <div ng-controller="myTest">
+          <input type="text" ng-model="userName" placeholder="V>M">
+          {{userName}}<br>
+          <input type="button" value="点击数据变html就变" ng-click="change();">
+      </div>
+    </body>
+</html>
